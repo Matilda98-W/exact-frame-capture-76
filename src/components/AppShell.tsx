@@ -5,6 +5,7 @@ import {
   Search,
   MessageSquare,
   Settings,
+  ShieldCheck,
   Sparkles,
   Menu,
   X,
@@ -16,6 +17,7 @@ const NAV = [
   { to: "/meeting-notes", label: "Meeting Notes Summariser", icon: FileText },
   { to: "/research", label: "AI Research Assistant", icon: Search },
   { to: "/chatbot", label: "AI Chatbot", icon: MessageSquare },
+  { to: "/responsible-ai", label: "Responsible AI", icon: ShieldCheck },
   { to: "/settings", label: "Settings", icon: Settings },
 ] as const;
 

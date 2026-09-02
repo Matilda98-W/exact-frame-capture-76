@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ChatbotRouteImport } from './routes/chatbot'
 import { Route as MeetingNotesRouteImport } from './routes/meeting-notes'
 import { Route as ResearchRouteImport } from './routes/research'
+import { Route as ResponsibleAiRouteImport } from './routes/responsible-ai'
 import { Route as SettingsRouteImport } from './routes/settings'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const ResearchRoute = ResearchRouteImport.update({
   path: '/research',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResponsibleAiRoute = ResponsibleAiRouteImport.update({
+  id: '/responsible-ai',
+  path: '/responsible-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/chatbot': typeof ChatbotRoute
   '/meeting-notes': typeof MeetingNotesRoute
   '/research': typeof ResearchRoute
+  '/responsible-ai': typeof ResponsibleAiRoute
   '/settings': typeof SettingsRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/chatbot': typeof ChatbotRoute
   '/meeting-notes': typeof MeetingNotesRoute
   '/research': typeof ResearchRoute
+  '/responsible-ai': typeof ResponsibleAiRoute
   '/settings': typeof SettingsRoute
 }
 export interface FileRoutesById {
@@ -61,15 +69,34 @@ export interface FileRoutesById {
   '/chatbot': typeof ChatbotRoute
   '/meeting-notes': typeof MeetingNotesRoute
   '/research': typeof ResearchRoute
+  '/responsible-ai': typeof ResponsibleAiRoute
   '/settings': typeof SettingsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/chatbot' | '/meeting-notes' | '/research' | '/settings'
+  fullPaths:
+    | '/'
+    | '/chatbot'
+    | '/meeting-notes'
+    | '/research'
+    | '/responsible-ai'
+    | '/settings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/chatbot' | '/meeting-notes' | '/research' | '/settings'
+  to:
+    | '/'
+    | '/chatbot'
+    | '/meeting-notes'
+    | '/research'
+    | '/responsible-ai'
+    | '/settings'
   id:
-    '__root__' | '/' | '/chatbot' | '/meeting-notes' | '/research' | '/settings'
+    | '__root__'
+    | '/'
+    | '/chatbot'
+    | '/meeting-notes'
+    | '/research'
+    | '/responsible-ai'
+    | '/settings'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +104,7 @@ export interface RootRouteChildren {
   ChatbotRoute: typeof ChatbotRoute
   MeetingNotesRoute: typeof MeetingNotesRoute
   ResearchRoute: typeof ResearchRoute
+  ResponsibleAiRoute: typeof ResponsibleAiRoute
   SettingsRoute: typeof SettingsRoute
 }
 
@@ -110,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/responsible-ai': {
+      id: '/responsible-ai'
+      path: '/responsible-ai'
+      fullPath: '/responsible-ai'
+      preLoaderRoute: typeof ResponsibleAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/settings': {
       id: '/settings'
       path: '/settings'
@@ -125,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   ChatbotRoute: ChatbotRoute,
   MeetingNotesRoute: MeetingNotesRoute,
   ResearchRoute: ResearchRoute,
+  ResponsibleAiRoute: ResponsibleAiRoute,
   SettingsRoute: SettingsRoute,
 }
 export const routeTree = rootRouteImport
