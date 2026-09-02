@@ -71,7 +71,7 @@ function Dashboard() {
       description="Use AI to cut through admin work: summarise meetings, research faster and get help planning your day. No account needed — just pick a tool and start."
     >
       <div className="space-y-10">
-        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {TOOLS.map(({ to, icon: Icon, title, copy }) => (
             <Link
               key={to}
@@ -96,14 +96,14 @@ function Dashboard() {
           <p className="mt-1 text-sm text-muted-foreground">
             Example statistics to illustrate how usage would be tracked.
           </p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {STATS.map(({ label, value, icon: Icon, hint }) => (
               <div key={label} className="surface-card p-5">
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">{label}</span>
                   <Icon className="size-4 text-primary" />
                 </div>
-                <p className="mt-3 text-3xl font-bold">{value}</p>
+                <p className="mt-3 text-2xl font-bold sm:text-3xl">{value}</p>
                 <p className="mt-1 text-xs text-muted-foreground">{hint}</p>
               </div>
             ))}
@@ -116,13 +116,13 @@ function Dashboard() {
             {ACTIVITY.map((item) => (
               <li
                 key={item.title}
-                className="flex flex-wrap items-center justify-between gap-2 px-5 py-4"
+                className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-4 sm:px-5"
               >
-                <div>
+                <div className="min-w-0">
                   <p className="text-sm font-medium">{item.title}</p>
                   <p className="mt-0.5 text-xs text-muted-foreground">{item.tool}</p>
                 </div>
-                <span className="text-xs text-muted-foreground">{item.time}</span>
+                <span className="shrink-0 text-right text-xs text-muted-foreground">{item.time}</span>
               </li>
             ))}
           </ul>

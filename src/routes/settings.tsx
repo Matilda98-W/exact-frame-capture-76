@@ -43,8 +43,8 @@ function SettingsPage() {
           <h2 className="flex items-center gap-2 text-base font-semibold">
             <Monitor className="size-4.5 text-primary" /> Appearance
           </h2>
-          <div className="mt-4 flex items-center justify-between gap-4 rounded-xl bg-muted/60 p-4">
-            <div>
+          <div className="mt-4 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-xl bg-muted/60 p-4">
+            <div className="min-w-0">
               <Label htmlFor="compact" className="text-sm font-medium">
                 Compact density
               </Label>
@@ -86,7 +86,7 @@ function SettingsPage() {
           </p>
           <Button
             variant="outline"
-            className="mt-4"
+            className="mt-4 w-full sm:w-auto"
             onClick={() => {
               sessionStorage.clear();
               setCleared(true);
