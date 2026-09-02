@@ -82,7 +82,7 @@ export function AppShell({
           <p className="text-xs leading-relaxed text-muted-foreground">
             Session-only prototype. Nothing you enter is stored after you close the tab.
           </p>
-          <p className="rounded-lg border border-warning/30 bg-warning/10 px-3 py-2 text-xs font-medium leading-relaxed text-warning-foreground">
+          <p className="rounded-lg border border-warning/30 bg-warning-soft px-3 py-2 text-xs font-medium leading-relaxed text-warning-foreground">
             Never enter confidential or sensitive workplace information.
           </p>
         </div>
