@@ -78,9 +78,14 @@ export function AppShell({
       <aside className="hidden w-72 shrink-0 border-r border-sidebar-border bg-sidebar p-5 lg:flex lg:flex-col lg:gap-8">
         <Brand />
         <NavLinks />
-        <p className="mt-auto text-xs leading-relaxed text-muted-foreground">
-          Session-only prototype. Nothing you enter is stored after you close the tab.
-        </p>
+        <div className="mt-auto flex flex-col gap-3">
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            Session-only prototype. Nothing you enter is stored after you close the tab.
+          </p>
+          <p className="rounded-lg border border-warning/30 bg-warning-soft px-3 py-2 text-xs font-medium leading-relaxed text-warning-foreground">
+            Never enter confidential or sensitive workplace information.
+          </p>
+        </div>
       </aside>
 
       <div className="flex min-w-0 flex-1 flex-col">
@@ -114,6 +119,9 @@ export function AppShell({
                 </button>
               </div>
               <NavLinks onNavigate={() => setOpen(false)} />
+              <p className="mt-auto rounded-lg border border-warning/30 bg-warning-soft px-3 py-2 text-xs font-medium leading-relaxed text-warning-foreground">
+                Never enter confidential or sensitive workplace information.
+              </p>
             </div>
           </div>
         )}
