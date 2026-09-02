@@ -33,14 +33,14 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
             key={to}
             to={to}
             onClick={onNavigate}
-            className={`flex items-center gap-3 min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+            className={`flex items-center gap-3 min-h-11 rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors ${
               active
                 ? "bg-sidebar-accent text-sidebar-accent-foreground"
                 : "text-muted-foreground hover:bg-muted hover:text-foreground"
             }`}
           >
             <Icon className="size-4.5 shrink-0" />
-            <span className="truncate">{label}</span>
+            <span className="leading-snug">{label}</span>
           </Link>
         );
       })}
