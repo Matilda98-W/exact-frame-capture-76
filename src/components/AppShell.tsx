@@ -119,7 +119,7 @@ export function AppShell({
                 </button>
               </div>
               <NavLinks onNavigate={() => setOpen(false)} />
-              <p className="mt-auto rounded-lg border border-warning/30 bg-warning/10 px-3 py-2 text-xs font-medium leading-relaxed text-warning-foreground">
+              <p className="mt-auto rounded-lg border border-warning/30 bg-warning-soft px-3 py-2 text-xs font-medium leading-relaxed text-warning-foreground">
                 Never enter confidential or sensitive workplace information.
               </p>
             </div>
