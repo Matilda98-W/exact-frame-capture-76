@@ -73,14 +73,14 @@ function ChatbotPage() {
       <div className="space-y-6">
         <ResponsibleAiNotice />
 
-        <section className="surface-card flex h-[60vh] min-h-100 flex-col overflow-hidden">
+        <section className="surface-card flex h-[70dvh] min-h-96 flex-col md:h-[65dvh] overflow-hidden">
           <div className="flex-1 space-y-4 overflow-y-auto p-4 sm:p-6">
             {messages.length === 0 && (
               <div className="space-y-4">
                 <p className="text-sm text-muted-foreground">
                   Try one of these to get started:
                 </p>
-                <div className="grid gap-2 sm:grid-cols-2">
+                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-2">
                   {EXAMPLES.map((example) => (
                     <button
                       key={example}
@@ -105,7 +105,7 @@ function ChatbotPage() {
                   </span>
                 )}
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
+                  className={`max-w-[85%] min-w-0 break-words rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
                     message.role === "user"
                       ? "bg-primary text-primary-foreground"
                       : "bg-muted text-foreground"
@@ -148,7 +148,7 @@ function ChatbotPage() {
               placeholder="Ask the assistant anything about your work…"
               className="max-h-40 min-h-11 flex-1 resize-none bg-background text-sm"
             />
-            <Button type="submit" size="lg" disabled={loading || !input.trim()}>
+            <Button type="submit" size="lg" aria-label="Send message" disabled={loading || !input.trim()}>
               <Send className="size-4" />
               <span className="hidden sm:inline">Send</span>
             </Button>

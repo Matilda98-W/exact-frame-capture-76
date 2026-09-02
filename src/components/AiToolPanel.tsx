@@ -61,10 +61,10 @@ export function AiToolPanel({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={placeholder}
-          className="mt-3 min-h-56 resize-y bg-background text-sm leading-relaxed"
+          className="mt-3 min-h-40 resize-y sm:min-h-56 bg-background text-sm leading-relaxed"
         />
         <div className="mt-4 flex flex-wrap items-center gap-3">
-          <Button onClick={handleGenerate} disabled={loading} size="lg">
+          <Button onClick={handleGenerate} disabled={loading} size="lg" className="w-full sm:w-auto">
             {loading ? (
               <Loader2 className="size-4 animate-spin" />
             ) : (
@@ -86,7 +86,7 @@ export function AiToolPanel({
               Editable output · {sections.join(" · ")}
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex shrink-0 gap-2">
             <Button variant="outline" size="sm" onClick={handleCopy} disabled={!output}>
               <Copy className="size-4" /> Copy
             </Button>
@@ -115,7 +115,7 @@ export function AiToolPanel({
             value={output}
             onChange={(e) => setOutput(e.target.value)}
             placeholder="Your AI-generated result will appear here, ready to edit."
-            className="mt-4 min-h-72 resize-y bg-background font-mono text-[13px] leading-relaxed"
+            className="mt-4 min-h-64 resize-y sm:min-h-72 bg-background font-mono text-[13px] leading-relaxed"
           />
         )}
       </section>
