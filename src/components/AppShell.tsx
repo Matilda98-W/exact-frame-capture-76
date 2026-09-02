@@ -5,6 +5,7 @@ import {
   Search,
   MessageSquare,
   Settings,
+  ShieldCheck,
   Sparkles,
   Menu,
   X,
