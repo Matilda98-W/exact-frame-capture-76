@@ -33,7 +33,8 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
             key={to}
             to={to}
             onClick={onNavigate}
-            className={`flex items-center gap-3 min-h-11 rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors ${
+            aria-current={active ? "page" : undefined}
+            className={`focus-ring flex items-center gap-3 min-h-11 rounded-lg px-3 py-2.5 text-left text-sm font-medium transition-colors active:bg-sidebar-accent active:text-sidebar-accent-foreground ${
               active
                 ? "bg-sidebar-accent text-sidebar-accent-foreground"
                 : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -42,6 +43,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
             <Icon className="size-4.5 shrink-0" />
             <span className="leading-snug">{label}</span>
           </Link>
+
         );
       })}
     </nav>
@@ -92,11 +94,13 @@ export function AppShell({
         <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-border bg-card/90 px-4 py-3 backdrop-blur md:hidden">
           <button
             aria-label="Open navigation"
+            aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="flex size-11 items-center justify-center rounded-lg border border-border text-foreground"
+            className="focus-ring flex size-11 items-center justify-center rounded-lg border border-border text-foreground transition-colors active:bg-muted"
           >
             <Menu className="size-5" />
           </button>
+
           <Brand />
         </header>
 
@@ -107,13 +111,13 @@ export function AppShell({
               onClick={() => setOpen(false)}
               aria-hidden
             />
-            <div className="absolute inset-y-0 left-0 flex w-[min(18rem,85vw)] flex-col gap-8 overflow-y-auto bg-sidebar p-5 shadow-lift">
+            <div className="absolute inset-y-0 left-0 flex w-[min(18rem,85vw)] flex-col gap-8 overflow-y-auto overflow-x-hidden bg-sidebar p-5 pr-6 shadow-lift">
               <div className="flex min-w-0 items-center justify-between gap-3">
                 <Brand />
                 <button
                   aria-label="Close navigation"
                   onClick={() => setOpen(false)}
-                  className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border"
+                  className="focus-ring flex size-11 shrink-0 items-center justify-center rounded-lg border border-border transition-colors active:bg-muted"
                 >
                   <X className="size-4" />
                 </button>
@@ -122,6 +126,7 @@ export function AppShell({
               <p className="mt-auto rounded-lg border border-warning/30 bg-warning-soft px-3 py-2 text-xs font-medium leading-relaxed text-warning-foreground">
                 Never enter confidential or sensitive workplace information.
               </p>
+
             </div>
           </div>
         )}
