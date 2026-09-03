@@ -162,11 +162,12 @@ function ResponsibleAiPage() {
           <div className="mt-5">
             <Link
               to="/settings"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+              className="focus-ring inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-primary hover:underline active:underline"
             >
               Review data and privacy settings
               <ArrowRight className="size-4" />
             </Link>
+
           </div>
         </section>
       </div>
