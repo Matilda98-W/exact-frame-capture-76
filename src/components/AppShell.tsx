@@ -94,11 +94,13 @@ export function AppShell({
         <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-border bg-card/90 px-4 py-3 backdrop-blur md:hidden">
           <button
             aria-label="Open navigation"
+            aria-expanded={open}
             onClick={() => setOpen(true)}
-            className="flex size-11 items-center justify-center rounded-lg border border-border text-foreground"
+            className="focus-ring flex size-11 items-center justify-center rounded-lg border border-border text-foreground transition-colors active:bg-muted"
           >
             <Menu className="size-5" />
           </button>
+
           <Brand />
         </header>
 
