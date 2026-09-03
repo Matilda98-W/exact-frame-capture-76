@@ -111,13 +111,13 @@ export function AppShell({
               onClick={() => setOpen(false)}
               aria-hidden
             />
-            <div className="absolute inset-y-0 left-0 flex w-[min(18rem,85vw)] flex-col gap-8 overflow-y-auto bg-sidebar p-5 shadow-lift">
+            <div className="absolute inset-y-0 left-0 flex w-[min(18rem,85vw)] flex-col gap-8 overflow-y-auto overflow-x-hidden bg-sidebar p-5 pr-6 shadow-lift">
               <div className="flex min-w-0 items-center justify-between gap-3">
                 <Brand />
                 <button
                   aria-label="Close navigation"
                   onClick={() => setOpen(false)}
-                  className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-border"
+                  className="focus-ring flex size-11 shrink-0 items-center justify-center rounded-lg border border-border transition-colors active:bg-muted"
                 >
                   <X className="size-4" />
                 </button>
@@ -126,6 +126,7 @@ export function AppShell({
               <p className="mt-auto rounded-lg border border-warning/30 bg-warning-soft px-3 py-2 text-xs font-medium leading-relaxed text-warning-foreground">
                 Never enter confidential or sensitive workplace information.
               </p>
+
             </div>
           </div>
         )}
